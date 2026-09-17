@@ -9,7 +9,8 @@ $Branch = if ($env:TUTU_GITHUB_BRANCH) { $env:TUTU_GITHUB_BRANCH } else { "main"
 $SetupName = "TuTuAI-Setup.exe"
 $Bridge = "http://127.0.0.1:3000"
 $Token = "tutu-local"
-$InstallRoot = Join-Path $env:LOCALAPPDATA "Programs\TuTuAI"
+# electron-builder per-user 目录用 package.json 的 name（tutu-ai），不是 productName
+$InstallRoot = Join-Path $env:LOCALAPPDATA "Programs\tutu-ai"
 $Here = $PSScriptRoot
 if (-not $Here) { $Here = $env:TEMP }
 
